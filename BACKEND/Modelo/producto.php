@@ -33,7 +33,7 @@
         $del = "DELETE FROM producto WHERE id_producto = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
+        $vec = ["resultado"] = "OK";
         $vec = ["mensaje "]= "El producto ha sido eliminado ";
         return $vec;
     }
