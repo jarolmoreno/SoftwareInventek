@@ -4,11 +4,11 @@
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type. Accept");
 
     require_once ("../conexion.php");
-    require_once ("../Modelo/producto.php");
+    require_once ("../Modelo/usuario.php");
 
     $control = $_GET['control'];
 
-    $prod = new Producto( $conexion );
+    $prod = new Usuario( $conexion );
 
     switch ($control) {
 

@@ -12,7 +12,7 @@
     }
 
     //consultar de la bd 
-   public function usuario(){
+   public function consulta(){
     $con= "SELECT * FROM usuario ORDER BY  id_usuario ";
     $res = mysqli_query($this -> conexion,$con);
     // se crea un arreglo para almacenar las consultas 
@@ -33,8 +33,8 @@
         $del = "DELETE FROM usuario WHERE id_usuario = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El usuario ha sido eliminado de la base de datos  ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El usuario ha sido eliminado de la base de datos  ";
         return $vec;
     }
 
@@ -44,8 +44,8 @@
         ,clave,nombre,email) 
                 VALUES ('$params -> nombre_usuario', '$params -> clave', $''$params -> nombre', $params -> '$params -> email', )";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El usuario fue registrado exitosamente ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El usuario fue registrado exitosamente ";
         return $vec;
 
     }
@@ -57,7 +57,7 @@
         mysqli_query($this -> conexion,$editar);
         $vec =[];
         $vec["resultado"] ="OK";
-        $vec = ["mensaje "]= "El producto ha sido editado ";
+        $vec  ["mensaje "]= "El producto ha sido editado ";
         return $vec;
 
 

@@ -29,12 +29,12 @@
 
     // eliminar de bd 
     public function eliminar($id){
-
+        echo "Modelo producto funcionando";
         $del = "DELETE FROM producto WHERE id_producto = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"] = "OK";
-        $vec = ["mensaje "]= "El producto ha sido eliminado ";
+        $vec ["resultado"] = "OK";
+        $vec ["mensaje "]= "El producto ha sido eliminado ";
         return $vec;
     }
 
@@ -43,8 +43,8 @@
         $ins = "INSERT INTO producto(nombre,cantidad,fo_proveedores) 
                 VALUES ('$params -> nombre', $params -> cantidad, $params -> fo_proveedores)";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El producto ha sido Guardado ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El producto ha sido Guardado ";
         return $vec;
 
     }
@@ -54,7 +54,7 @@
         mysqli_query($this -> conexion,$editar);
         $vec =[];
         $vec["resultado"] ="OK";
-        $vec = ["mensaje "]= "El producto ha sido editado ";
+        $vec["mensaje "]= "El producto ha sido editado ";
         return $vec;
 
 
