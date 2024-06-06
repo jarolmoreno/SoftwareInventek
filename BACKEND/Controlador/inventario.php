@@ -4,7 +4,7 @@
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type. Accept");
 
     require_once ("../conexion.php");
-    require_once ("../Modelo/usuario.php");
+    require_once ("../Modelo/inventario.php");
 
     $control = $_GET['control'];
 

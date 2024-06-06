@@ -13,7 +13,7 @@
 
     //consultar de la bd 
    public function consulta(){
-    $con= "SELECT * FROM usuario ORDER BY  id_usuario ";
+    $con= "SELECT * FROM usuario ORDER BY  nombre ";
     $res = mysqli_query($this -> conexion,$con);
     // se crea un arreglo para almacenar las consultas 
     $vec =[];

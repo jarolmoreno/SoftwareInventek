@@ -33,8 +33,8 @@
         $del = "DELETE FROM proveedor WHERE Nit_idproveedor = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El proveedor ha sido eliminado de la base de datos ";
+        $vec ["resultado"]= "OK";
+        $vec ["mensaje "]= "El proveedor ha sido eliminado de la base de datos ";
         return $vec;
     }
 
@@ -43,8 +43,8 @@
         $ins = "INSERT INTO proveedor (nombre,direccion,celular,email,fo_ciudad,) 
                 VALUES ('$params -> nombre', $params -> direccion, $params -> celular, $params -> email, $params -> fo_ciudad)";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El registro del proveedor ha sido exitoso ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El registro del proveedor ha sido exitoso ";
         return $vec;
 
     }
@@ -56,7 +56,7 @@
         mysqli_query($this -> conexion,$editar);
         $vec =[];
         $vec["resultado"] ="OK";
-        $vec = ["mensaje "]= "El producto ha sido editado ";
+        $vec ["mensaje "]= "El producto ha sido editado ";
         return $vec;
 
 

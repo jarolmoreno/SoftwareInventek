@@ -15,24 +15,24 @@
         case 'consulta':
           $vec= $prod -> consulta() ;
         break;
-        // case 'insertar':
-        //      $json = file_get_contents("php://input");
-        //      $params = json_decode($json);
-        //      $vec = $prod -> insertar($params);
-        // break;
-        // case 'eliminar':
-        //     $id = $_GET('id');
-        //     $vec = $prod -> eliminar ($id);
+        case 'insertar':
+             $json = file_get_contents("php://input");
+             $params = json_decode($json);
+             $vec = $prod -> insertar($params);
+        break;
+        case 'eliminar':
+            $id = $_GET('id');
+            $vec = $prod -> eliminar ($id);
 
-        // break;
+        break;
 
-        // case 'editar':
-        //     $json = file_get_contents("php://input");
-        //     $params = json_decode($json);
-        //     $id = $_GET('id');
-        //     $vec = $prod -> editar ($id, $params);
+        case 'editar':
+            $json = file_get_contents("php://input");
+            $params = json_decode($json);
+            $id = $_GET('id');
+            $vec = $prod -> editar ($id, $params);
 
-        //     break;
+            break;
 
     }
 
