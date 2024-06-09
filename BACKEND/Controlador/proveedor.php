@@ -22,7 +22,7 @@
         break;
         case 'eliminar':
             $id = $_GET('id');
-            $vec = $prod -> eliminar ($id);
+            $vec=$prod->eliminar($id);
 
         break;
 
@@ -36,7 +36,7 @@
 
     }
 
-    $datosj = json_encode($vec);
+    $datosj=json_encode($vec);
     echo $datosj;
     header('Content-Type: application/json');
 

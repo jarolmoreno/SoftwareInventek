@@ -12,6 +12,6 @@
      
     mysqli_select_db ($conexion,$bd) or die ("no se encontro la base de datos ");
     mysqli_set_charset($conexion, "utf8");
-    echo "se conecto correctamente";
+    //echo "se conecto correctamente";
     
 ?>

@@ -13,8 +13,10 @@
 
     //consultar de la bd 
    public function consulta(){
-    $con= "SELECT * FROM proveedor ORDER BY  nombre ";
-    $res = mysqli_query($this -> conexion,$con);
+    $con= "SELECT proveedor.*,ciudad.nombre_ciudad AS ciudad FROM proveedor
+    INNER JOIN ciudad ON proveedor.fo_Ciudad= ciudad.idciudad
+    ORDER BY nombre ";
+    $res = mysqli_query($this->conexion,$con);
     // se crea un arreglo para almacenar las consultas 
     $vec =[];
     
