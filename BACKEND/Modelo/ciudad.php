@@ -40,7 +40,7 @@
 
     public function insertar ($params){
 
-        $ins = "INSERT INTO nombre_ciudad (nombre_ciudad) 
+        $ins = "INSERT INTO 
                 VALUES ('$params -> nombre_usuario' )";
         mysqli_query($this -> conexion,$ins);
         $vec = ["resultado"]= "OK";

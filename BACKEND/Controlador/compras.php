@@ -4,11 +4,11 @@
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type. Accept");
 
     require_once ("../conexion.php");
-    require_once ("../Modelo/usuario.php");
+    require_once ("../Modelo/compras.php");
 
     $control = $_GET['control'];
 
-    $prod = new Usuario( $conexion );
+    $prod = new Compras ( $conexion );
 
     switch ($control) {
 
@@ -21,7 +21,7 @@
              $vec = $prod -> insertar($params);
         break;
         case 'eliminar':
-            $id = $_GET("id");
+            $id = $_GET('id');
             $vec = $prod -> eliminar ($id);
 
         break;
@@ -29,14 +29,14 @@
         case 'editar':
             $json = file_get_contents("php://input");
             $params = json_decode($json);
-            $id =$_GET('id');
-            $vec = $prod-> editar ($id, $params);
+            $id = $_GET('id');
+            $vec = $prod -> editar ($id, $params);
 
             break;
 
     }
 
-    $datosj = json_encode($vec);
+    $datosj=json_encode($vec);
     echo $datosj;
     header('Content-Type: application/json');
 

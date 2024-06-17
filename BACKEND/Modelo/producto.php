@@ -31,7 +31,7 @@
     public function eliminar($id){
         echo "Modelo producto funcionando";
         $del = "DELETE FROM producto WHERE id_producto = $id";
-        mysqli_query($this -> conexion,$del);
+        mysqli_query($this-> conexion,$del);
         $vec = [];
         $vec ["resultado"] = "OK";
         $vec ["mensaje "]= "El producto ha sido eliminado ";
@@ -39,9 +39,10 @@
     }
 
     public function insertar ($params){
+        echo "Funcion insertar funcionando";
 
-        $ins = "INSERT INTO producto(nombre,cantidad,fo_proveedores) 
-                VALUES ('$params -> nombre', $params -> cantidad, $params -> fo_proveedores)";
+        $ins = "INSERT INTO producto (nombre) 
+                VALUES ('$params-> nombre')";
         mysqli_query($this -> conexion,$ins);
         $vec  ["resultado"]= "OK";
         $vec  ["mensaje "]= "El producto ha sido Guardado ";

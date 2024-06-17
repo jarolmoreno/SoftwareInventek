@@ -12,20 +12,21 @@
     }
 
     //consultar de la bd 
-   public function consulta(){
-    $con= "SELECT * FROM inventario ORDER BY  id_insumo ";
-    $res = mysqli_query($this -> conexion,$con);
-    // se crea un arreglo para almacenar las consultas 
-    $vec =[];
+    public function consulta(){
+        $con= "SELECT inventario.*,producto.nombre AS producto FROM inventario
+        INNER JOIN producto ON inventario.fo_producto= producto.id_producto
+        ORDER BY nombre ";
+        $res = mysqli_query($this->conexion,$con);
+        // se crea un arreglo para almacenar las consultas 
+        $vec =[];
+        
+        while($row = mysqli_fetch_array($res)){
+            $vec[] = $row;
+        }
     
-    while($row = mysqli_fetch_array($res)){
-        $vec[] = $row;
+        return $vec;    
+    
     }
-
-    return $vec;    
-
-}
-
 
     // eliminar de bd 
     public function eliminar($id){
@@ -33,8 +34,8 @@
         $del = "DELETE FROM inventario WHERE id_areainv = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El insumo ha sido eliminado de la base de datos  ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El insumo ha sido eliminado de la base de datos  ";
         return $vec;
     }
 
@@ -44,8 +45,8 @@
         ,nombre_insumo,cantidad,total_stock,fo_producto,fo_usuario) 
                 VALUES ('$params -> nombre_Area', $params -> id_insumo, $'$params -> nombre_insumo', $params -> cantidad, $params -> total_stock,'$params -> fo_producto' )";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "El insumo fue ingresado al inventario exitosamente ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El insumo fue ingresado al inventario exitosamente ";
         return $vec;
 
     }
@@ -57,7 +58,7 @@
         mysqli_query($this -> conexion,$editar);
         $vec =[];
         $vec["resultado"] ="OK";
-        $vec = ["mensaje "]= "El producto ha sido editado ";
+        $vec ["mensaje "]= "El producto ha sido editado ";
         return $vec;
 
 

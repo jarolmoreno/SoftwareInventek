@@ -12,19 +12,21 @@
     }
 
     //consultar de la bd 
-   public function consulta(){
-    $con= "SELECT * FROM compras ORDER BY  nombre ";
-    $res = mysqli_query($this -> conexion,$con);
-    // se crea un arreglo para almacenar las consultas 
-    $vec =[];
+    public function consulta(){
+        $con= "SELECT compras.*,inventario.nombre_insumo AS inventario FROM compras
+        INNER JOIN inventario ON compras.fo_insumo= inventario.id_areainv
+        ORDER BY nombre ";
+        $res = mysqli_query($this -> conexion,$con);
+        // se crea un arreglo para almacenar las consultas 
+        $vec =[];
+        
+        while($row = mysqli_fetch_array($res)){
+            $vec[] = $row;
+        }
     
-    while($row = mysqli_fetch_array($res)){
-        $vec[] = $row;
+        return $vec;    
+    
     }
-
-    return $vec;    
-
-}
 
 
     // eliminar de bd 
@@ -33,18 +35,18 @@
         $del = "DELETE FROM compras WHERE id_compras = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "La orden de compra ha sido  eliminada ";
+        $vec ["resultado"]= "OK";
+        $vec ["mensaje "]= "La orden de compra ha sido  eliminada ";
         return $vec;
     }
 
     public function insertar ($params){
 
-        $ins = "INSERT INTO compras (numero_factura,fecha,fo_insumo,cantidad,subtotal,iva,total,fo_usuario, fo_proveedorinv) 
-                VALUES ('$params -> numero_factura', $params -> fecha, $params -> fo_insumo, $params -> cantidad, $params -> subtotal ,$params -> iva, $params -> total,$params -> fo_usuario, $params -> fo_proveedorinv,)";
+        $ins = "INSERT INTO compras (fecha) 
+                VALUES ('$params -> fecha' )";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "La orden de compra ha sido generada  ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "La orden de compra ha sido generada  ";
         return $vec;
 
     }
@@ -57,7 +59,7 @@
         mysqli_query($this -> conexion,$editar);
         $vec =[];
         $vec["resultado"] ="OK";
-        $vec = ["mensaje "]= "El producto ha sido editado ";
+        $vec  ["mensaje "]= "El producto ha sido editado ";
         return $vec;
 
 

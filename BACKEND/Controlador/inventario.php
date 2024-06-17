@@ -8,7 +8,7 @@
 
     $control = $_GET['control'];
 
-    $prod = new Usuario( $conexion );
+    $prod = new Inventario( $conexion );
 
     switch ($control) {
 
