@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
+
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './estructura/header/header.component';
 import { NavComponent } from './estructura/nav/nav.component';
@@ -43,6 +45,7 @@ import { ControlysoporteComponent } from './modulos/controlysoporte/controlysopo
     AppRoutingModule,
     FormsModule,
     HttpClientModule
+   
     
   ],
   providers: [
