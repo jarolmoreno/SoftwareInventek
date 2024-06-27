@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProveedorService {
+  
   url = "http://localhost/plantilla/BACKEND/Controlador/proveedor.php";
 
   constructor(private http: HttpClient) {}

@@ -22,7 +22,7 @@
         break;
         case 'eliminar':
             $id = $_GET("id");
-            $vec = $prod -> eliminar ($id);
+            $vec = $prod-> eliminar ($id);
 
         break;
 
