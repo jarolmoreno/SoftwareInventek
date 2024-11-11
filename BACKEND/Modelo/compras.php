@@ -15,8 +15,8 @@
     public function consulta(){
         $con= "SELECT compras.*,inventario.nombre_insumo AS inventario FROM compras
         INNER JOIN inventario ON compras.fo_insumo= inventario.id_areainv
-        ORDER BY nombre ";
-        $res = mysqli_query($this -> conexion,$con);
+        ORDER BY inventario ";
+        $res = mysqli_query($this->conexion,$con);
         // se crea un arreglo para almacenar las consultas 
         $vec =[];
         

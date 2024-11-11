@@ -1,9 +1,14 @@
 <?php
 
+//accesos a los servicios en angular 
+
     header("Access-Control-Allow-Origin: *");
     header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type. Accept");
 
+    // llamado a la conexion de la bases de datos 
+
     require_once ("../conexion.php");
+    //llamado al modelo usuarios 
     require_once ("../Modelo/usuario.php");
 
     $control = $_GET['control'];
@@ -41,4 +46,4 @@
     header('Content-Type: application/json');
 
 
-?>
+?>;
