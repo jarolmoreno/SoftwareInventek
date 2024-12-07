@@ -20,7 +20,7 @@
              $params = json_decode($json);
              $vec = $prod -> insertar($params);
         break;
-        case 'eliminar':
+         case 'eliminar':
             $id = $_GET('id');
             $vec = $prod -> eliminar ($id);
 

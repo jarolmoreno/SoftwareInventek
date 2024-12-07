@@ -2,6 +2,47 @@
 <div class="row justify-content-left align-content-center text-left">
     <div class="columna col-lg-6">
      MODULO INVENTARIOS
+     <hr>
+                 <input type="button" value="Registrar Proveedor" class="btn btn-warning">
+                 <div id="formulario"> </div>
+                 <div id="tabla">
+                   <div class="row">
+                     <div class="col-lg-1"></div>
+                     <div class="col-lg-10">
+                       <div class="responsive">
+                         <table class="table">
+           
+                           <tr>
+                             <th>Nit_idproveedor</th>
+                             <th>nombre</th>
+                             <th>direccion</th>
+                             <th>celular</th>
+                             <th>email</th>
+                             <th>ciudad</th>
+                            
+                             
+                           </tr>
+                           <tr *ngFor="let item of inventarios">
+                             <td>{{item.Nit_idproveedor}}</td> 
+                             <td>{{item.nombre}}</td>
+                             <td>{{item.direccion}}</td>
+                             <td>{{item.celular}}</td>
+                             <td>{{item.email}}</td>
+                             <td>{{item.ciudad}}</td>
+                            
+                             <td>Acciones</td>
+                            <td>
+                             <span class="fas fa-edit" style="color: blue; cursor: pointer"title="Editar"> </span>
+                             <span class="fas fa-minus-square" style="color: red; cursor: pointer " title="Eliminar"> </span>
+                            </td>
+                           </tr>
+           
+                         </table>
+                       </div>
+                     </div>
+                     <div class="col-lg-1"></div>
+                   </div>
+                 </div>
     </div>
     
     

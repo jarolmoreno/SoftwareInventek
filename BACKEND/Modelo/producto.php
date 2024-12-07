@@ -12,19 +12,21 @@
     }
 
     //consultar de la bd 
-   public function consulta(){
-    $con= "SELECT * FROM producto ORDER BY  nombre ";
-    $res = mysqli_query($this -> conexion,$con);
-    // se crea un arreglo para almacenar las consultas 
-    $vec =[];
+    public function consulta(){
+        $con= "SELECT producto.*,proveedor.nombre AS proveedor FROM producto
+        INNER JOIN proveedor ON producto.fo_proveedores= proveedor.Nit_idproveedor
+        ORDER BY nombre ";
+        $res = mysqli_query($this->conexion,$con);
+        // se crea un arreglo para almacenar las consultas 
+        $vec =[];
+        
+        while($row = mysqli_fetch_array($res)){
+            $vec[] = $row;
+        }
     
-    while($row = mysqli_fetch_array($res)){
-        $vec[] = $row;
+        return $vec;    
+    
     }
-
-    return $vec;    
-
-}
 
 
     // eliminar de bd 

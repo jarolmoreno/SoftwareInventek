@@ -2,6 +2,51 @@
 <div class="row justify-content-left align-content-center text-left">
                 <div class="columna col-lg-6">
                  MODULO COMPRAS
+
+                 <hr>
+                 <input type="button" value="Nueva O.C" class="btn btn-warning">
+                 <div id="formulario"> </div>
+                 <div id="tabla">
+                   <div class="row">
+                     <div class="col-lg-1"></div>
+                     <div class="col-lg-10">
+                       <div class="responsive">
+                         <table class="table">
+           
+                           <tr>
+                             <th>id_compras</th>
+                             <th>fecha</th>
+                             <th>codigo_producto</th>
+                             <th>nombre_producto</th>
+                             <th>cantidad</th>
+                             <th>insumo</th>
+                             <th>usuario</th>
+                             <th>proveedor</th>
+                             
+                           </tr>
+                           <tr *ngFor="let item of compras">
+                             <td>{{item.idcompras}}</td> 
+                             <td>{{item.fecha}}</td>
+                             <td>{{item.codigo_producto}}</td>
+                             <td>{{item.nombre_producto}}</td>
+                             <td>{{item.cantidad}}</td>
+                             <td>{{item.insumo}}</td>
+                             <td>{{item.usuario}}</td>
+                             <td>{{item.proveedor}}</td>
+                             <td>Acciones</td>
+                            <td>
+                             <span class="fas fa-edit" style="color: blue; cursor: pointer"title="Editar"> </span>
+                             <span class="fas fa-minus-square" style="color: red; cursor: pointer " title="Eliminar"> </span>
+                            </td>
+                           </tr>
+           
+                         </table>
+                       </div>
+                     </div>
+                     <div class="col-lg-1"></div>
+                   </div>
+                 </div>
+
                 </div>
                 
                 

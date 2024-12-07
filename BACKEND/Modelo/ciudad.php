@@ -12,8 +12,8 @@
     }
 
     //consultar de la bd 
-   public function ciudad(){
-    $con= "SELECT * FROM ciudad ORDER BY  id_ciudad ";
+   public function consulta(){
+    $con= "SELECT * FROM ciudad ORDER BY  idciudad ";
     $res = mysqli_query($this -> conexion,$con);
     // se crea un arreglo para almacenar las consultas 
     $vec =[];
@@ -30,21 +30,21 @@
     // eliminar de bd 
     public function eliminar($id){
 
-        $del = "DELETE FROM ciudad WHERE id_usuario = $id";
+        $del = "DELETE FROM ciudad WHERE idciudad = $id";
         mysqli_query($this -> conexion,$del);
         $vec = [];
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "la ciudd  ha sido eliminada de la base de datos  ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El insumo ha sido eliminado de la base de datos  ";
         return $vec;
     }
 
     public function insertar ($params){
 
-        $ins = "INSERT INTO 
-                VALUES ('$params -> nombre_usuario' )";
+        $ins = "INSERT INTO ciudad (idciudad,nombre_ciudad) 
+                VALUES ('$params -> idciudad', $params -> nombre_ciudad)";
         mysqli_query($this -> conexion,$ins);
-        $vec = ["resultado"]= "OK";
-        $vec = ["mensaje "]= "la ciudad fue registrada exitosamente ";
+        $vec  ["resultado"]= "OK";
+        $vec  ["mensaje "]= "El registro de la ciudad ha sido exitoso ";
         return $vec;
 
     }

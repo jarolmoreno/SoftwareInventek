@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProveedorService } from '../../servicios/proveedor.service';
 
 @Component({
   selector: 'app-proveedores',
@@ -7,4 +8,19 @@ import { Component } from '@angular/core';
 })
 export class ProveedoresComponent {
 
+  proveedores: any;
+
+  constructor(private sproveedores: ProveedorService){}
+
+  ngOnInit():void{
+    this.consulta()
+    
+
+  }
+
+  consulta(){
+    this.sproveedores.consultar().subscribe((resultado:any)=>{
+      this.proveedores =resultado;
+    })
+  }
 }
