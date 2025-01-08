@@ -9,6 +9,7 @@ import { ComprasComponent } from './modulos/compras/compras.component';
 import { ProveedoresComponent } from './modulos/proveedores/proveedores.component';
 import { InventariosComponent } from './modulos/inventarios/inventarios.component';
 import { ControlysoporteComponent } from './modulos/controlysoporte/controlysoporte.component';
+import { NoEncontroComponent } from './modulos/no-encontro/no-encontro.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,9 @@ const routes: Routes = [
   ]
 },
 { path: 'login', component: LoginComponent },
+{ path: '**', component: NoEncontroComponent },
+
+
 ];
 
 @NgModule({

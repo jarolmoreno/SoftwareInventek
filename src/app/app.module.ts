@@ -19,6 +19,7 @@ import { ComprasComponent } from './modulos/compras/compras.component';
 import { ProveedoresComponent } from './modulos/proveedores/proveedores.component';
 import { InventariosComponent } from './modulos/inventarios/inventarios.component';
 import { ControlysoporteComponent } from './modulos/controlysoporte/controlysoporte.component';
+import { NoEncontroComponent } from './modulos/no-encontro/no-encontro.component';
 
 
 
@@ -38,6 +39,7 @@ import { ControlysoporteComponent } from './modulos/controlysoporte/controlysopo
     ProveedoresComponent,
     InventariosComponent,
     ControlysoporteComponent,
+    NoEncontroComponent,
 
   ],
   imports: [
