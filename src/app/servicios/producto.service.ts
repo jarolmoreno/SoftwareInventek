@@ -11,11 +11,11 @@ export class ProductoService {
   constructor(private http: HttpClient) { }
 
   consultar(){
-    return this.http.get('${this.url}?control=consulta');
+    return this.http.get(`${this.url}?control=consulta`);
   }
 
   eliminar(id:number){
-    return this.http.get('${this.url}?control=eliminar&id=${id}');
+    return this.http.get(`${this.url}?control=eliminar&id=${id}`);
 
   }
 
@@ -26,7 +26,7 @@ export class ProductoService {
   }
 
   editar(id:number, params:any){
-    return this.http.post('${this.url}?control=editar&id=${id}', JSON.stringify(params));
+    return this.http.post(`${this.url}?control=editar&id=${id}`, params);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
   }
 
 

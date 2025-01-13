@@ -11,11 +11,11 @@ export class ProveedorService {
   constructor(private http: HttpClient) {}
 
   consultar(){
-    return this.http.get('${this.url}?control=consulta');
+    return this.http.get(`${this.url}?control=consulta`);
   }
 
   eliminar(id:number){
-    return this.http.get('${this.url}?control=eliminar&id=${id}');
+    return this.http.get(`${this.url}?control=eliminar&id=${id}`);
 
   }
 
