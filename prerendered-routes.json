@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/",
+    "/compras",
+    "/controlysoporte ",
+    "/dashboard",
+    "/inventarios",
+    "/login",
+    "/productos",
+    "/proveedores",
+    "/usuarios"
+  ]
+}
